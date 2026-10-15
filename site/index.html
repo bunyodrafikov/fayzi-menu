@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fayzi Чайхана — Меню</title>
 <meta name="description" content="Меню чайханы Fayzi: плов, шашлык, лагман, салаты, чай.">
-<meta name="theme-color" content="#faf7f2">
+<meta name="theme-color" content="#111111">
 <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/prata-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -15,17 +15,20 @@
   @font-face { font-family: Manrope; font-weight: 400 700; font-display: swap; src: url(fonts/manrope-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   @font-face { font-family: Prata; font-display: swap; src: url(fonts/prata-cyrillic.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
   @font-face { font-family: Prata; font-display: swap; src: url(fonts/prata-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  /* Dark theme: neutral charcoal (not brown) so food photos pop; saffron accent */
   :root {
-    color-scheme: light;
-    --bg: #faf7f2;
-    --surface: #ffffff;
-    --text: #1f1a17;
-    --muted: #6b625a;
-    --line: #ece6dd;
-    --accent: #c2452d;        /* pomegranate */
-    --accent-soft: #c2452d12;
-    --gold: #c98a1b;          /* saffron */
-    --shadow: 0 1px 2px rgb(60 40 20 / .06), 0 6px 20px rgb(60 40 20 / .07);
+    color-scheme: dark;
+    --bg: #111111;
+    --surface: #1c1c1c;
+    --text: #f4f0ea;
+    --muted: #a8a29a;
+    --line: #2b2b2b;
+    --accent: #e3a43b;        /* saffron */
+    --accent-soft: #e3a43b1f;
+    --on-accent: #1a1206;     /* text on saffron fills */
+    --gold: #e3a43b;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .35);
+    --chip-shadow: 0 2px 10px rgb(0 0 0 / .5);
     --ease: cubic-bezier(.2, .7, .2, 1);
   }
   * { box-sizing: border-box; }
@@ -44,7 +47,6 @@
     text-align: center;
     padding: 40px 16px 20px;
   }
-  .ornament { display: block; margin: 0 auto 12px; color: var(--gold); }
   .hero h1 {
     font: 400 40px/1 Prata, Georgia, serif;
     margin: 0;
@@ -62,9 +64,38 @@
   /* Category bar */
   /* No bar behind the chips: they float over the menu on their own pills */
   nav.cats { position: sticky; top: 0; z-index: 10; }
+  /* Soft fade from the top behind «Fayzi» and the chips once scrolled; content dissolves under it */
+  nav.cats::before {
+    content: "";
+    position: absolute; inset: 0 0 -28px;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+      var(--bg) 0%,
+      color-mix(in srgb, var(--bg) 85%, transparent) 55%,
+      transparent 100%);
+    opacity: 0;
+    transition: opacity .3s var(--ease);
+  }
+  nav.cats.compact::before { opacity: 1; }
+  nav.cats .bar { display: flex; align-items: center; max-width: 960px; margin: 0 auto; }
+  /* «Fayzi» slides in left of the chips once the header has scrolled away */
+  nav.cats .brand {
+    flex: none;
+    max-width: 0; overflow: hidden;
+    padding-left: 0;
+    opacity: 0;
+    font: 400 22px/1 Prata, Georgia, serif;
+    color: var(--text);
+    text-decoration: none;
+    text-shadow: 0 1px 8px rgb(0 0 0 / .6);
+    pointer-events: none;
+    transition: max-width .35s var(--ease), opacity .25s var(--ease), padding .35s var(--ease);
+  }
+  nav.cats.compact .brand { max-width: 100px; padding-left: 16px; opacity: 1; pointer-events: auto; }
   nav.cats .row {
+    flex: 1; min-width: 0;
     display: flex; gap: 8px;
-    max-width: 960px; margin: 0 auto;
     padding: 10px 16px 12px;
     overflow-x: auto; scrollbar-width: none;
     scroll-behavior: smooth;
@@ -72,36 +103,36 @@
     mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 28px), transparent);
   }
   nav.cats .row::-webkit-scrollbar { display: none; }
-  nav.cats a {
+  nav.cats .row a {
     flex: none;
     display: flex; align-items: center; gap: 8px;
     padding: 4px 16px 4px 4px;
     border-radius: 999px;
     background: var(--surface);
-    box-shadow: inset 0 0 0 1px var(--line), 0 2px 8px rgb(60 40 20 / .12);
+    box-shadow: inset 0 0 0 1px var(--line), var(--chip-shadow);
     color: var(--text);
     text-decoration: none;
     font-size: 14px; font-weight: 600;
     white-space: nowrap;
     transition: background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease), transform .15s var(--ease);
   }
-  nav.cats a img, nav.cats a .dot {
+  nav.cats .row a img {
     width: 34px; height: 34px;
     border-radius: 50%;
     object-fit: cover;
     background: var(--line);
     transition: box-shadow .25s var(--ease);
   }
-  nav.cats a .dot { display: grid; place-items: center; color: var(--gold); background: #f4ede2; }
-  @media (hover: hover) { nav.cats a:hover { box-shadow: inset 0 0 0 1px var(--accent), 0 2px 8px rgb(60 40 20 / .12); } }
-  nav.cats a:active { transform: scale(.96); }
-  nav.cats a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  nav.cats a.active {
+  nav.cats .row a.text-only { padding: 10px 16px; } /* category without a photo */
+  @media (hover: hover) { nav.cats .row a:hover { box-shadow: inset 0 0 0 1px var(--accent), var(--chip-shadow); } }
+  nav.cats .row a:active { transform: scale(.96); }
+  nav.cats .row a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  nav.cats .row a.active {
     background: var(--accent);
-    color: #fff;
-    box-shadow: 0 4px 12px rgb(194 69 45 / .35);
+    color: var(--on-accent);
+    box-shadow: 0 4px 14px rgb(227 164 59 / .3);
   }
-  nav.cats a.active img { box-shadow: 0 0 0 2px #fff; }
+  nav.cats .row a.active img { box-shadow: 0 0 0 2px var(--on-accent); }
 
   /* Sections */
   main { max-width: 960px; margin: 0 auto; padding: 0 16px 64px; }
@@ -118,7 +149,7 @@
   @media (min-width: 520px) { .items { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; } }
   @media (min-width: 760px) { .items { grid-template-columns: repeat(3, 1fr); gap: 20px 16px; } }
   @media (min-width: 960px) { .items { grid-template-columns: repeat(4, 1fr); } }
-  @media (min-width: 960px) { main { max-width: 1160px; } nav.cats .row { max-width: 1160px; } }
+  @media (min-width: 960px) { main { max-width: 1160px; } nav.cats .bar { max-width: 1160px; } }
 
   .item {
     all: unset;
@@ -133,9 +164,9 @@
     transition: transform .2s var(--ease), box-shadow .2s var(--ease);
   }
   @media (hover: hover) {
-    .item:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgb(60 40 20 / .06), 0 12px 28px rgb(60 40 20 / .12); }
+    .item:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgb(0 0 0 / .4), 0 14px 32px rgb(0 0 0 / .5); }
     .item:hover .photo img { transform: scale(1.04); }
-    .item:hover .more { background: var(--accent); color: #fff; }
+    .item:hover .more { background: var(--accent); color: var(--on-accent); }
   }
   .item:active { transform: scale(.985); }
   .item:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -150,11 +181,6 @@
     width: 100%; height: 100%;
     object-fit: cover;
     transition: transform .5s var(--ease), opacity .4s var(--ease);
-  }
-  .photo.empty {
-    display: grid; place-items: center;
-    color: var(--gold);
-    background: #f4ede2;
   }
   .card-body { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px 14px; flex: 1; }
   .name { font-weight: 700; font-size: 16px; line-height: 1.3; }
@@ -184,7 +210,7 @@
     overflow: auto;
     overscroll-behavior: contain;
   }
-  dialog::backdrop { background: rgb(30 20 10 / .45); backdrop-filter: blur(3px); }
+  dialog::backdrop { background: rgb(0 0 0 / .65); backdrop-filter: blur(3px); }
   dialog[open] { animation: pop .35s var(--ease); }
   dialog[open]::backdrop { animation: fade .3s var(--ease); }
   @media (max-width: 639px) {
@@ -242,15 +268,10 @@
 </head>
 <body>
 <header class="hero">
-  <svg class="ornament" width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-    <path d="M22 2l5.9 14.1L42 22l-14.1 5.9L22 42l-5.9-14.1L2 22l14.1-5.9z"/>
-    <path d="M22 9l3.7 9.3L35 22l-9.3 3.7L22 35l-3.7-9.3L9 22l9.3-3.7z"/>
-    <circle cx="22" cy="22" r="3"/>
-  </svg>
   <h1>Fayzi</h1>
   <p>Чайхана · Меню</p>
 </header>
-<nav class="cats" aria-label="Категории"><div class="row" id="cats"></div></nav>
+<nav class="cats" aria-label="Категории"><div class="bar"><a class="brand" href="#top" aria-label="Наверх" tabindex="-1">Fayzi</a><div class="row" id="cats"></div></div></nav>
 <main id="menu"></main>
 <dialog id="sheet" aria-label="Блюдо"></dialog>
 
@@ -258,7 +279,6 @@
 <script>
 document.documentElement.classList.add('js');
 const fmt = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
-const STAR = '<svg width="40" height="40" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 2l5.9 14.1L42 22l-14.1 5.9L22 42l-5.9-14.1L2 22l14.1-5.9z"/></svg>';
 
 function el(tag, attrs = {}, ...children) {
   const n = document.createElement(tag);
@@ -321,28 +341,33 @@ async function openSheet(it, cardImg) {
 let eagerLeft = 2; // about one phone screen
 function renderItem(it) {
   const btn = el('button', { type: 'button', class: 'item reveal', 'aria-haspopup': 'dialog' });
-  const photo = el('span', { class: 'photo' + (it.photo ? '' : ' empty') });
-  if (it.photo) photo.append(img(it.photo, '', eagerLeft-- > 0));
-  else photo.innerHTML = STAR;
+  // Dishes without a photo get a text-only card.
+  const photo = it.photo ? el('span', { class: 'photo' }, img(it.photo, '', eagerLeft-- > 0)) : null;
   const body = el('span', { class: 'card-body' }, el('span', { class: 'name' }, it.name));
   if (it.ingredients) body.append(el('span', { class: 'teaser' }, it.ingredients));
   const more = el('span', { class: 'more', 'aria-hidden': 'true' }, 'Подробнее');
   more.insertAdjacentHTML('beforeend', '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg>');
   body.append(el('span', { class: 'card-foot' }, el('span', { class: 'price' }, fmt.format(it.price) + ' ₽'), more));
-  btn.append(photo, body);
-  btn.addEventListener('click', () => openSheet(it, photo.querySelector('img')));
+  if (photo) btn.append(photo);
+  btn.append(body);
+  btn.addEventListener('click', () => openSheet(it, photo?.querySelector('img')));
   return btn;
 }
 
 function render(menu) {
   const nav = document.getElementById('cats');
+  const navBar = nav.closest('nav');
+  // Show «Fayzi» in the chip bar once the big header is out of view; tap it to go back to the top.
+  new IntersectionObserver(([e]) => navBar.classList.toggle('compact', !e.isIntersecting))
+    .observe(document.querySelector('.hero h1'));
+  navBar.querySelector('.brand').addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
   const main = document.getElementById('menu');
 
   menu.forEach((cat, ci) => {
     const id = 'c' + ci;
     const chip = el('a', { href: '#' + id });
     if (cat.thumb) chip.append(el('img', { src: cat.thumb, alt: '', width: 34, height: 34, decoding: 'async' }));
-    else chip.insertAdjacentHTML('beforeend', `<span class="dot">${STAR.replace(/40/g, '18')}</span>`);
+    else chip.classList.add('text-only');
     chip.append(cat.name);
     nav.append(chip);
     const list = el('div', { class: 'items' });
