@@ -95,6 +95,9 @@
   nav.cats .brand {
     flex: none;
     overflow: hidden; white-space: nowrap;
+    /* overflow: hidden + line-height 1 cut the tail of the «y»: extra room above/below, cancelled by
+       negative margins so the text stays exactly where the big title lands */
+    padding-block: .3em; margin-block: -.3em;
     max-width: calc(var(--q) * 100px);
     padding-left: calc(var(--q) * 16px);
     opacity: 0; /* shown only once the big title has landed here */
@@ -349,7 +352,7 @@ async function openSheet(it, cardImg) {
     const tile = (v, label) => el('div', {}, el('b', {}, v), el('span', {}, label));
     body.append(
       el('div', { class: 'nutrition' }, tile(kcal, 'ккал'), tile(p + ' г', 'белки'), tile(f + ' г', 'жиры'), tile(c + ' г', 'углеводы')),
-      el('p', { class: 'nutrition-note' }, 'на порцию'));
+      el('p', { class: 'nutrition-note' }, 'на 100 грамм'));
   }
   if (it.ingredients) body.append(el('p', { class: 'label' }, 'Состав'), el('p', { class: 'ingredients' }, it.ingredients));
   const close = el('button', { type: 'button', class: 'close', 'aria-label': 'Закрыть' });
