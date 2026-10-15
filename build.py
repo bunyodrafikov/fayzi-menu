@@ -1,9 +1,10 @@
 """Build menu.js and web-sized photos from menu.xlsx + photos/.
 
-Edit menu.xlsx (Категория | Название | Цена | Состав | Фото), then run:
+Edit menu.xlsx (Категория | Название | Цена | Состав | Фото | Калории | Белки | Жиры | Углеводы), then run:
     .venv/bin/python build.py
 Rows keep sheet order; categories appear in order of first use.
 Фото = file name inside photos/ (full-quality original, jpg/png/webp; empty = no photo).
+Калории/Белки/Жиры/Углеводы = per portion (kcal, g); leave all four empty to hide them.
 Output goes to site/ — the whole folder to deploy (index.html, menu.js, images/, fonts/).
 Generated into site/images/:
     <name>-720.webp, <name>-1200.webp  sharp on any phone/desktop via srcset
@@ -39,8 +40,9 @@ def main():
     os.makedirs(os.path.join(SITE, "images"), exist_ok=True)
     ws = load_workbook(os.path.join(ROOT, "menu.xlsx"), read_only=True, data_only=True).active
     cats, errors = {}, []
-    for n, row in enumerate(ws.iter_rows(min_row=2, max_col=5, values_only=True), start=2):
-        cat, name, price, ingr, photo = [(v.strip() if isinstance(v, str) else v) for v in row]
+    for n, row in enumerate(ws.iter_rows(min_row=2, max_col=9, values_only=True), start=2):
+        row = (tuple(row) + (None,) * 9)[:9]
+        cat, name, price, ingr, photo, *nutr = [(v.strip() if isinstance(v, str) else v) for v in row]
         if not any((cat, name, price, ingr, photo)):
             continue  # blank row
         if not cat or not name:
@@ -51,6 +53,14 @@ def main():
         except ValueError:
             errors.append(f"row {n}: Цена is not a number: {price!r}")
             continue
+        if all(v in (None, "") for v in nutr):
+            nutr = None
+        else:
+            try:
+                nutr = [round(float(str(v).replace(",", "."))) for v in nutr]
+            except ValueError:
+                errors.append(f"row {n}: Калории/Белки/Жиры/Углеводы must all be numbers: {nutr!r}")
+                continue
         if photo and not os.path.isfile(os.path.join(ROOT, "photos", photo)):
             errors.append(f"row {n}: photo not found: photos/{photo}")
             continue
@@ -59,6 +69,7 @@ def main():
             "price": price,
             "ingredients": ingr or "",
             "photo": photo or "",
+            **({"nutrition": nutr} if nutr else {}),  # [kcal, protein g, fat g, carbs g]
         })
 
     if errors:

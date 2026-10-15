@@ -8,25 +8,49 @@ window.MENU = [
     "name": "Яичница из трёх яиц",
     "price": 200.0,
     "ingredients": "Яйца куриные, сливочное масло, соль, зелень",
-    "photo": "images/product_1778499752830_7fdac0d85fd1"
+    "photo": "images/product_1778499752830_7fdac0d85fd1",
+    "nutrition": [
+     278,
+     19,
+     22,
+     1
+    ]
    },
    {
     "name": "Яичница с помидорами",
     "price": 200.0,
     "ingredients": "Яйца куриные, помидоры, сливочное масло, зелёный лук, специи",
-    "photo": "images/product_1780238620613_aca1e752351e"
+    "photo": "images/product_1780238620613_aca1e752351e",
+    "nutrition": [
+     298,
+     19,
+     22,
+     6
+    ]
    },
    {
     "name": "Омлет с помидорами",
     "price": 230.0,
     "ingredients": "Яйца куриные, молоко, помидоры, сливочное масло, зелень",
-    "photo": "images/product_1778788909754_dcc49604d37c"
+    "photo": "images/product_1778788909754_dcc49604d37c",
+    "nutrition": [
+     328,
+     20,
+     24,
+     8
+    ]
    },
    {
     "name": "Яйца с сосисками",
     "price": 340.0,
     "ingredients": "Яйца куриные, сосиски, сливочное масло, зелень",
-    "photo": "images/product_1780238659096_72d3ced28b94"
+    "photo": "images/product_1780238659096_72d3ced28b94",
+    "nutrition": [
+     418,
+     25,
+     34,
+     3
+    ]
    }
   ]
  },
@@ -38,127 +62,253 @@ window.MENU = [
     "name": "Салат «От шефа»",
     "price": 360.0,
     "ingredients": "Говяжий язык, свежие овощи, листья салата, кунжут, фирменный соус",
-    "photo": "images/product_1778336306724_09d809d12a06"
+    "photo": "images/product_1778336306724_09d809d12a06",
+    "nutrition": [
+     294,
+     16,
+     22,
+     8
+    ]
    },
    {
     "name": "Рукола",
     "price": 420.0,
     "ingredients": "Руккола, черри, пармезан, кедровые орехи, бальзамический соус",
-    "photo": "images/product_1778336450597_568824ff5179"
+    "photo": "images/product_1778336450597_568824ff5179",
+    "nutrition": [
+     234,
+     10,
+     18,
+     8
+    ]
    },
    {
     "name": "Самарканд",
     "price": 390.0,
     "ingredients": "Отварная говядина, редька, морковь, яйцо, жареный лук, майонез",
-    "photo": "images/product_1778791161570_899c5ebb81ff"
+    "photo": "images/product_1778791161570_899c5ebb81ff",
+    "nutrition": [
+     312,
+     16,
+     24,
+     8
+    ]
    },
    {
     "name": "Мазза",
     "price": 390.0,
     "ingredients": "Баклажаны, сладкий перец, помидоры, чеснок, кинза, соус терияки",
-    "photo": "images/product_1778791224697_82046e277e77"
+    "photo": "images/product_1778791224697_82046e277e77",
+    "nutrition": [
+     244,
+     5,
+     16,
+     20
+    ]
    },
    {
     "name": "Каприз",
     "price": 380.0,
     "ingredients": "Моцарелла, помидоры, базилик, оливковое масло, соус песто",
-    "photo": "images/product_1778338170859_73f84b2653f1"
+    "photo": "images/product_1778338170859_73f84b2653f1",
+    "nutrition": [
+     304,
+     16,
+     24,
+     6
+    ]
    },
    {
     "name": "Цезарь с курицей",
     "price": 380.0,
     "ingredients": "Куриное филе, романо, черри, пармезан, гренки, соус цезарь",
-    "photo": "images/product_1778338214857_66a9bf0fe63f"
+    "photo": "images/product_1778338214857_66a9bf0fe63f",
+    "nutrition": [
+     350,
+     24,
+     22,
+     14
+    ]
    },
    {
     "name": "Ташкент",
     "price": 350.0,
     "ingredients": "Отварная говядина, зелёная редька, яйцо, жареный лук, майонез",
-    "photo": "images/product_1778791590329_87a69efebfa5"
+    "photo": "images/product_1778791590329_87a69efebfa5",
+    "nutrition": [
+     330,
+     16,
+     26,
+     8
+    ]
    },
    {
     "name": "Корейский",
     "price": 390.0,
     "ingredients": "Говядина, огурцы, морковь по-корейски, сладкий перец, кунжут, соевый соус",
-    "photo": "images/product_1778791691448_c2f843c30b81"
+    "photo": "images/product_1778791691448_c2f843c30b81",
+    "nutrition": [
+     242,
+     15,
+     14,
+     14
+    ]
    },
    {
     "name": "Королевский",
     "price": 390.0,
     "ingredients": "Креветки, авокадо, помидоры, листья салата, сырный соус",
-    "photo": "images/product_1778340272766_05294196e0a5"
+    "photo": "images/product_1778340272766_05294196e0a5",
+    "nutrition": [
+     294,
+     16,
+     22,
+     8
+    ]
    },
    {
     "name": "Восток",
     "price": 350.0,
     "ingredients": "Баранина, баклажаны, сладкий перец, помидоры, зелень, кунжут",
-    "photo": "images/product_1778340354580_2cbdb7edea11"
+    "photo": "images/product_1778340354580_2cbdb7edea11",
+    "nutrition": [
+     302,
+     16,
+     22,
+     10
+    ]
    },
    {
     "name": "Вдохновение",
     "price": 370.0,
     "ingredients": "Куриное филе, ананас, сыр, грецкий орех, яйцо, майонез",
-    "photo": "images/product_1778792774726_cd1fff651a3f"
+    "photo": "images/product_1778792774726_cd1fff651a3f",
+    "nutrition": [
+     398,
+     18,
+     30,
+     14
+    ]
    },
    {
     "name": "Оливье",
     "price": 350.0,
     "ingredients": "Отварная говядина, картофель, морковь, яйцо, огурцы, горошек, майонез",
-    "photo": "images/product_1778340507491_b449f3a7578f"
+    "photo": "images/product_1778340507491_b449f3a7578f",
+    "nutrition": [
+     346,
+     12,
+     26,
+     16
+    ]
    },
    {
     "name": "Винегрет",
     "price": 320.0,
     "ingredients": "Свёкла, картофель, морковь, квашеная капуста, огурцы, растительное масло",
-    "photo": "images/product_1778340622299_d0880974280d"
+    "photo": "images/product_1778340622299_d0880974280d",
+    "nutrition": [
+     182,
+     3,
+     10,
+     20
+    ]
    },
    {
     "name": "Греческий",
     "price": 360.0,
     "ingredients": "Помидоры, огурцы, сладкий перец, маслины, фета, красный лук, оливковое масло",
-    "photo": "images/product_1778340699538_9b1f7d1d7c94"
+    "photo": "images/product_1778340699538_9b1f7d1d7c94",
+    "nutrition": [
+     252,
+     8,
+     20,
+     10
+    ]
    },
    {
     "name": "Грузинский",
     "price": 360.0,
     "ingredients": "Помидоры, огурцы, красный лук, грецкий орех, кинза, базилик, растительное масло",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     244,
+     6,
+     20,
+     10
+    ]
    },
    {
     "name": "Ачик-чучук",
     "price": 330.0,
     "ingredients": "Помидоры, репчатый лук, острый перец, базилик, соль",
-    "photo": "images/product_1778794108968_bf32dfc6bb16"
+    "photo": "images/product_1778794108968_bf32dfc6bb16",
+    "nutrition": [
+     93,
+     2,
+     5,
+     10
+    ]
    },
    {
     "name": "Свежий",
     "price": 320.0,
     "ingredients": "Огурцы, помидоры, редис, зелень, растительное масло",
-    "photo": "images/product_1778794320866_9c6311fc066e"
+    "photo": "images/product_1778794320866_9c6311fc066e",
+    "nutrition": [
+     138,
+     3,
+     10,
+     9
+    ]
    },
    {
     "name": "Чирокчи",
     "price": 340.0,
     "ingredients": "Отварная говядина, огурцы, помидоры, зелень, сметанная заправка",
-    "photo": "images/product_1778794382827_1e9c6ef6714a"
+    "photo": "images/product_1778794382827_1e9c6ef6714a",
+    "nutrition": [
+     214,
+     14,
+     14,
+     8
+    ]
    },
    {
     "name": "Бахор",
     "price": 320.0,
     "ingredients": "Капуста, огурцы, морковь, зелень, лимонная заправка",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     120,
+     2,
+     8,
+     10
+    ]
    },
    {
     "name": "Свёкла с чесноком",
     "price": 290.0,
     "ingredients": "Отварная свёкла, чеснок, грецкий орех, майонез",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     278,
+     4,
+     22,
+     16
+    ]
    },
    {
     "name": "Сельдь под шубой",
     "price": 370.0,
     "ingredients": "Сельдь, свёкла, картофель, морковь, яйцо, лук, майонез",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     390,
+     12,
+     30,
+     18
+    ]
    }
   ]
  },
@@ -170,61 +320,121 @@ window.MENU = [
     "name": "Шурпа",
     "price": 410.0,
     "ingredients": "Баранина, картофель, морковь, лук, помидоры, сладкий перец, зелень",
-    "photo": "images/product_1778795345545_73d78bbf0710"
+    "photo": "images/product_1778795345545_73d78bbf0710",
+    "nutrition": [
+     330,
+     20,
+     18,
+     22
+    ]
    },
    {
     "name": "Куза шурпа",
     "price": 450.0,
     "ingredients": "Баранина, нут, картофель, морковь, лук, айва, зира — томится в глиняном горшочке",
-    "photo": "images/product_1778795435326_b96ace57e65b"
+    "photo": "images/product_1778795435326_b96ace57e65b",
+    "nutrition": [
+     398,
+     22,
+     22,
+     28
+    ]
    },
    {
     "name": "Мастава",
     "price": 290.0,
     "ingredients": "Говядина, рис, морковь, картофель, помидоры, лук, кислое молоко, зелень",
-    "photo": "images/product_1778795530385_0b8b8a2770b5"
+    "photo": "images/product_1778795530385_0b8b8a2770b5",
+    "nutrition": [
+     316,
+     16,
+     12,
+     36
+    ]
    },
    {
     "name": "Лагман",
     "price": 410.0,
     "ingredients": "Домашняя лапша, говядина, сладкий перец, редька, помидоры, чеснок, зелень",
-    "photo": "images/product_1778795636944_921991e0acc9"
+    "photo": "images/product_1778795636944_921991e0acc9",
+    "nutrition": [
+     416,
+     20,
+     16,
+     48
+    ]
    },
    {
     "name": "Лагман уйгурский",
     "price": 450.0,
     "ingredients": "Тянутая лапша, говядина, сельдерей, болгарский перец, стручковая фасоль, чеснок",
-    "photo": "images/product_1778795726841_c1c945379e9a"
+    "photo": "images/product_1778795726841_c1c945379e9a",
+    "nutrition": [
+     474,
+     22,
+     18,
+     56
+    ]
    },
    {
     "name": "Солянка",
     "price": 320.0,
     "ingredients": "Говядина, колбаса, сосиски, огурцы солёные, маслины, лимон, сметана",
-    "photo": "images/product_1778796375422_b37c4e5a30c7"
+    "photo": "images/product_1778796375422_b37c4e5a30c7",
+    "nutrition": [
+     276,
+     16,
+     20,
+     8
+    ]
    },
    {
     "name": "Борщ",
     "price": 290.0,
     "ingredients": "Говядина, свёкла, капуста, картофель, морковь, лук, сметана, зелень",
-    "photo": "images/product_1780238678005_f62d7bd82599"
+    "photo": "images/product_1780238678005_f62d7bd82599",
+    "nutrition": [
+     244,
+     14,
+     12,
+     20
+    ]
    },
    {
     "name": "Харчо",
     "price": 350.0,
     "ingredients": "Говядина, рис, помидоры, грецкий орех, чеснок, кинза, хмели-сунели",
-    "photo": "images/product_1780238714370_b1471c6a40f9"
+    "photo": "images/product_1780238714370_b1471c6a40f9",
+    "nutrition": [
+     304,
+     16,
+     16,
+     24
+    ]
    },
    {
     "name": "Куриный суп",
     "price": 290.0,
     "ingredients": "Курица, домашняя лапша, картофель, морковь, лук, зелень",
-    "photo": "images/product_1780238826173_8230cf602251"
+    "photo": "images/product_1780238826173_8230cf602251",
+    "nutrition": [
+     240,
+     18,
+     8,
+     24
+    ]
    },
    {
     "name": "Тыквенный суп",
     "price": 350.0,
     "ingredients": "Тыква, сливки, картофель, лук, тыквенные семечки, гренки",
-    "photo": "images/product_1780238857800_f06c7dc0b589"
+    "photo": "images/product_1780238857800_f06c7dc0b589",
+    "nutrition": [
+     252,
+     5,
+     16,
+     22
+    ]
    }
   ]
  },
@@ -236,139 +446,277 @@ window.MENU = [
     "name": "Файзи от шефа",
     "price": 750.0,
     "ingredients": "Ассорти из баранины и говядины, картофель, овощи, фирменный соус",
-    "photo": "images/product_1778796756708_cee89af384a1"
+    "photo": "images/product_1778796756708_cee89af384a1",
+    "nutrition": [
+     742,
+     42,
+     46,
+     40
+    ]
    },
    {
     "name": "Казан-кебаб с говядиной",
     "price": 520.0,
     "ingredients": "Говядина, картофель, лук, зира, зелень — обжарено в казане",
-    "photo": "images/product_1778796858951_55a03ae15ae4"
+    "photo": "images/product_1778796858951_55a03ae15ae4",
+    "nutrition": [
+     594,
+     34,
+     34,
+     38
+    ]
    },
    {
     "name": "Казан-кебаб с бараниной",
     "price": 650.0,
     "ingredients": "Баранина, картофель, лук, зира, зелень — обжарено в казане",
-    "photo": "images/product_1778796953566_f1f584d21ee5"
+    "photo": "images/product_1778796953566_f1f584d21ee5",
+    "nutrition": [
+     676,
+     32,
+     44,
+     38
+    ]
    },
    {
     "name": "Джиз-быз с говядиной",
     "price": 520.0,
     "ingredients": "Говядина, курдюк, картофель, лук, сладкий перец, зира",
-    "photo": "images/product_1778797048199_ff0eb9d5d61d"
+    "photo": "images/product_1778797048199_ff0eb9d5d61d",
+    "nutrition": [
+     608,
+     32,
+     40,
+     30
+    ]
    },
    {
     "name": "Джиз-быз с бараниной",
     "price": 620.0,
     "ingredients": "Баранина, курдюк, картофель, лук, сладкий перец, зира",
-    "photo": "images/product_1778797124342_7d187a0787a2"
+    "photo": "images/product_1778797124342_7d187a0787a2",
+    "nutrition": [
+     690,
+     30,
+     50,
+     30
+    ]
    },
    {
     "name": "Лагман жареный",
     "price": 470.0,
     "ingredients": "Домашняя лапша, говядина, сладкий перец, помидоры, чеснок, яйцо",
-    "photo": "images/product_1778797210571_ab095ba4b2be"
+    "photo": "images/product_1778797210571_ab095ba4b2be",
+    "nutrition": [
+     552,
+     24,
+     24,
+     60
+    ]
    },
    {
     "name": "Медальон",
     "price": 700.0,
     "ingredients": "Говяжья вырезка, грибной соус, овощи гриль",
-    "photo": "images/product_1778797279444_a5c2c31b7a63"
+    "photo": "images/product_1778797279444_a5c2c31b7a63",
+    "nutrition": [
+     392,
+     36,
+     24,
+     8
+    ]
    },
    {
     "name": "Бефстроганов с пюре",
     "price": 600.0,
     "ingredients": "Говядина, сливочный соус, лук, шампиньоны, картофельное пюре",
-    "photo": "images/product_1778797647038_85d2cbc7c9ac"
+    "photo": "images/product_1778797647038_85d2cbc7c9ac",
+    "nutrition": [
+     526,
+     30,
+     30,
+     34
+    ]
    },
    {
     "name": "Курица по-домашнему",
     "price": 450.0,
     "ingredients": "Курица, картофель, лук, морковь, помидоры, зелень",
-    "photo": "images/product_1778797743778_25c8788cb99a"
+    "photo": "images/product_1778797743778_25c8788cb99a",
+    "nutrition": [
+     428,
+     32,
+     20,
+     30
+    ]
    },
    {
     "name": "Говядина по-домашнему",
     "price": 490.0,
     "ingredients": "Говядина, картофель, лук, морковь, сладкий перец, зелень",
-    "photo": "images/product_1778797816035_d448f234819f"
+    "photo": "images/product_1778797816035_d448f234819f",
+    "nutrition": [
+     464,
+     32,
+     24,
+     30
+    ]
    },
    {
     "name": "Тефтели",
     "price": 480.0,
     "ingredients": "Говяжий фарш, рис, лук, томатный соус, гарнир",
-    "photo": "images/product_1778797887824_5b940e61fb3d"
+    "photo": "images/product_1778797887824_5b940e61fb3d",
+    "nutrition": [
+     338,
+     20,
+     18,
+     24
+    ]
    },
    {
     "name": "Долма",
     "price": 400.0,
     "ingredients": "Виноградные листья, говяжий фарш, рис, зелень, мацони",
-    "photo": "images/product_1778797994467_3bf589ef42a5"
+    "photo": "images/product_1778797994467_3bf589ef42a5",
+    "nutrition": [
+     358,
+     20,
+     22,
+     20
+    ]
    },
    {
     "name": "Курутоб",
     "price": 500.0,
     "ingredients": "Лепёшка фатыр, курут, помидоры, огурцы, лук, зелень, топлёное масло",
-    "photo": "images/product_1778798067135_9a9da4780255"
+    "photo": "images/product_1778798067135_9a9da4780255",
+    "nutrition": [
+     516,
+     14,
+     28,
+     52
+    ]
    },
    {
     "name": "Чахохбили",
     "price": 460.0,
     "ingredients": "Курица, помидоры, лук, чеснок, кинза, хмели-сунели",
-    "photo": "images/product_1780238904095_1234fcbdc2ed"
+    "photo": "images/product_1780238904095_1234fcbdc2ed",
+    "nutrition": [
+     374,
+     32,
+     22,
+     12
+    ]
    },
    {
     "name": "Чашушули",
     "price": 490.0,
     "ingredients": "Говядина, помидоры, сладкий перец, лук, чеснок, кинза, острый перец",
-    "photo": "images/product_1780239308621_19ee60811ff2"
+    "photo": "images/product_1780239308621_19ee60811ff2",
+    "nutrition": [
+     410,
+     32,
+     26,
+     12
+    ]
    },
    {
     "name": "Куриные котлеты с картофельным пюре",
     "price": 400.0,
     "ingredients": "Куриный фарш, лук, яйцо, панировка, картофельное пюре",
-    "photo": "images/product_1778798759460_603595e10e1f"
+    "photo": "images/product_1778798759460_603595e10e1f",
+    "nutrition": [
+     462,
+     26,
+     22,
+     40
+    ]
    },
    {
     "name": "Говяжьи котлеты с картофельным пюре",
     "price": 440.0,
     "ingredients": "Говяжий фарш, лук, яйцо, панировка, картофельное пюре",
-    "photo": "images/product_1778798868157_7b72e012c1c3"
+    "photo": "images/product_1778798868157_7b72e012c1c3",
+    "nutrition": [
+     516,
+     26,
+     28,
+     40
+    ]
    },
    {
     "name": "Бифштекс",
     "price": 480.0,
     "ingredients": "Говяжий фарш, яйцо, лук, гарнир",
-    "photo": "images/product_1778798933888_7a3766645b15"
+    "photo": "images/product_1778798933888_7a3766645b15",
+    "nutrition": [
+     398,
+     26,
+     30,
+     6
+    ]
    },
    {
     "name": "Гуляш",
     "price": 480.0,
     "ingredients": "Говядина, лук, томат, паприка, мука, гарнир",
-    "photo": "images/product_1780607616870_58c9dc627c88"
+    "photo": "images/product_1780607616870_58c9dc627c88",
+    "nutrition": [
+     350,
+     26,
+     22,
+     12
+    ]
    },
    {
     "name": "Плов",
     "price": 420.0,
     "ingredients": "Рис девзира, баранина, жёлтая морковь, лук, нут, чеснок, зира, барбарис",
-    "photo": "images/product_1778799595056_9c4fda53cd46"
+    "photo": "images/product_1778799595056_9c4fda53cd46",
+    "nutrition": [
+     682,
+     24,
+     34,
+     70
+    ]
    },
    {
     "name": "Плов самаркандский",
     "price": 3600.0,
     "ingredients": "Рис девзира, баранина, жёлтая морковь, лук, перепелиные яйца, казы, зира — на компанию",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     4460,
+     160,
+     220,
+     460
+    ]
    },
    {
     "name": "Оджахури с говядиной",
     "price": 520.0,
     "ingredients": "Говядина, картофель, лук, сладкий перец, чеснок, кинза",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     508,
+     30,
+     28,
+     34
+    ]
    },
    {
     "name": "Оджахури с бараниной",
     "price": 590.0,
     "ingredients": "Баранина, картофель, лук, сладкий перец, чеснок, кинза",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     572,
+     28,
+     36,
+     34
+    ]
    }
   ]
  },
@@ -380,91 +728,181 @@ window.MENU = [
     "name": "Ассорти из шашлыка",
     "price": 3700.0,
     "ingredients": "Баранина, говядина, курица, люля-кебаб, маринованный лук, зелень",
-    "photo": "images/product_1780491704604_3b98bd72a88b"
+    "photo": "images/product_1780491704604_3b98bd72a88b",
+    "nutrition": [
+     974,
+     80,
+     70,
+     6
+    ]
    },
    {
     "name": "Уч-панжа",
     "price": 690.0,
     "ingredients": "Баранья корейка на трёх рёбрышках, маринованный лук, зелень",
-    "photo": "images/product_1778799876348_0e6569cc0d63"
+    "photo": "images/product_1778799876348_0e6569cc0d63",
+    "nutrition": [
+     604,
+     32,
+     52,
+     2
+    ]
    },
    {
     "name": "Рулет",
     "price": 640.0,
     "ingredients": "Баранина, курдюк, лук, специи",
-    "photo": "images/product_1780242816420_7819a02749f6"
+    "photo": "images/product_1780242816420_7819a02749f6",
+    "nutrition": [
+     564,
+     30,
+     48,
+     3
+    ]
    },
    {
     "name": "Наполеон",
     "price": 580.0,
     "ingredients": "Слоёный шашлык из баранины и курдюка, лук, зира",
-    "photo": "images/product_1780491181656_9b738405d967"
+    "photo": "images/product_1780491181656_9b738405d967",
+    "nutrition": [
+     574,
+     28,
+     50,
+     3
+    ]
    },
    {
     "name": "Корейка баранья",
     "price": 750.0,
     "ingredients": "Баранья корейка, маринованный лук, зелень, специи",
-    "photo": "images/product_1778852188678_5422dac03bdc"
+    "photo": "images/product_1778852188678_5422dac03bdc",
+    "nutrition": [
+     604,
+     32,
+     52,
+     2
+    ]
    },
    {
     "name": "Мякоть баранины",
     "price": 720.0,
     "ingredients": "Баранина, маринованный лук, зелень, зира",
-    "photo": "images/product_1778852250396_94d15f9b8d71"
+    "photo": "images/product_1778852250396_94d15f9b8d71",
+    "nutrition": [
+     480,
+     36,
+     36,
+     3
+    ]
    },
    {
     "name": "Люля из баранины",
     "price": 490.0,
     "ingredients": "Бараний фарш, курдюк, лук, зира, кинза",
-    "photo": "images/product_1778852331329_942f5bc0b74e"
+    "photo": "images/product_1778852331329_942f5bc0b74e",
+    "nutrition": [
+     532,
+     30,
+     44,
+     4
+    ]
    },
    {
     "name": "Курдюк",
     "price": 650.0,
     "ingredients": "Курдючный жир, соль, специи",
-    "photo": "images/product_1780242845512_77e6369709d2"
+    "photo": "images/product_1780242845512_77e6369709d2",
+    "nutrition": [
+     744,
+     6,
+     80,
+     0
+    ]
    },
    {
     "name": "Вырезка из говядины",
     "price": 640.0,
     "ingredients": "Говяжья вырезка, маринованный лук, специи",
-    "photo": "images/product_1778852450555_b9f5b85014f2"
+    "photo": "images/product_1778852450555_b9f5b85014f2",
+    "nutrition": [
+     302,
+     42,
+     14,
+     2
+    ]
    },
    {
     "name": "Люля из говядины",
     "price": 460.0,
     "ingredients": "Говяжий фарш, лук, зира, кинза",
-    "photo": "images/product_1778852498934_3a761a6b5fcb"
+    "photo": "images/product_1778852498934_3a761a6b5fcb",
+    "nutrition": [
+     450,
+     32,
+     34,
+     4
+    ]
    },
    {
     "name": "Голень куриная",
     "price": 430.0,
     "ingredients": "Куриная голень, маринад из кефира и специй, лук",
-    "photo": "images/product_1778852552042_e7da38ab5883"
+    "photo": "images/product_1778852552042_e7da38ab5883",
+    "nutrition": [
+     354,
+     36,
+     22,
+     3
+    ]
    },
    {
     "name": "Грудка куриная",
     "price": 420.0,
     "ingredients": "Куриное филе, маринад из кефира и специй, лук",
-    "photo": "images/product_1778852633425_787ff9d6a01c"
+    "photo": "images/product_1778852633425_787ff9d6a01c",
+    "nutrition": [
+     260,
+     44,
+     8,
+     3
+    ]
    },
    {
     "name": "Крылья куриные",
     "price": 390.0,
     "ingredients": "Куриные крылья, острый маринад, специи",
-    "photo": "images/product_1778852690213_21a951e72358"
+    "photo": "images/product_1778852690213_21a951e72358",
+    "nutrition": [
+     448,
+     36,
+     32,
+     4
+    ]
    },
    {
     "name": "Овощи на гриле",
     "price": 300.0,
     "ingredients": "Баклажаны, кабачки, сладкий перец, помидоры, лук",
-    "photo": "images/product_1778852744685_cc730acd808f"
+    "photo": "images/product_1778852744685_cc730acd808f",
+    "nutrition": [
+     178,
+     4,
+     10,
+     18
+    ]
    },
    {
     "name": "Шампиньоны на гриле",
     "price": 350.0,
     "ingredients": "Шампиньоны, сливочное масло, чеснок, специи",
-    "photo": "images/product_1780242916609_b48bcc4b05ca"
+    "photo": "images/product_1780242916609_b48bcc4b05ca",
+    "nutrition": [
+     138,
+     8,
+     10,
+     4
+    ]
    }
   ]
  },
@@ -476,31 +914,61 @@ window.MENU = [
     "name": "Молочная девочка",
     "price": 220.0,
     "ingredients": "Тонкие молочные коржи, сливочный крем",
-    "photo": "images/product_1778498923384_6b8fc75732bf"
+    "photo": "images/product_1778498923384_6b8fc75732bf",
+    "nutrition": [
+     434,
+     7,
+     22,
+     52
+    ]
    },
    {
     "name": "Сказка",
     "price": 250.0,
     "ingredients": "Бисквит, сметанный крем, грецкий орех, шоколад",
-    "photo": "images/product_1778499030379_6c37cad6c068"
+    "photo": "images/product_1778499030379_6c37cad6c068",
+    "nutrition": [
+     458,
+     6,
+     26,
+     50
+    ]
    },
    {
     "name": "Сникерс",
     "price": 250.0,
     "ingredients": "Шоколадный бисквит, арахис, карамель, сливочный крем",
-    "photo": "images/product_1778499065579_27c61062830b"
+    "photo": "images/product_1778499065579_27c61062830b",
+    "nutrition": [
+     514,
+     9,
+     30,
+     52
+    ]
    },
    {
     "name": "Медовик",
     "price": 220.0,
     "ingredients": "Медовые коржи, сметанный крем",
-    "photo": "images/product_1778499114452_dfc463073c93"
+    "photo": "images/product_1778499114452_dfc463073c93",
+    "nutrition": [
+     446,
+     6,
+     22,
+     56
+    ]
    },
    {
     "name": "Пахлава",
     "price": 220.0,
     "ingredients": "Слоёное тесто, грецкий орех, мёд, сливочное масло",
-    "photo": "images/product_1780239954136_95c52443b759"
+    "photo": "images/product_1780239954136_95c52443b759",
+    "nutrition": [
+     474,
+     6,
+     26,
+     54
+    ]
    }
   ]
  },
@@ -512,85 +980,169 @@ window.MENU = [
     "name": "Картофель по-домашнему",
     "price": 220.0,
     "ingredients": "Картофель, лук, укроп, растительное масло",
-    "photo": "images/product_1780491999204_54032d908297"
+    "photo": "images/product_1780491999204_54032d908297",
+    "nutrition": [
+     286,
+     4,
+     14,
+     36
+    ]
    },
    {
     "name": "Картофель фри",
     "price": 200.0,
     "ingredients": "Картофель, соль",
-    "photo": "images/product_1780492178966_e7da85c24a95"
+    "photo": "images/product_1780492178966_e7da85c24a95",
+    "nutrition": [
+     402,
+     5,
+     22,
+     46
+    ]
    },
    {
     "name": "Картофельное пюре",
     "price": 170.0,
     "ingredients": "Картофель, молоко, сливочное масло",
-    "photo": "images/product_1780240167810_b0ca510e7209"
+    "photo": "images/product_1780240167810_b0ca510e7209",
+    "nutrition": [
+     180,
+     3,
+     8,
+     24
+    ]
    },
    {
     "name": "Рис отварной",
     "price": 170.0,
     "ingredients": "Рис, сливочное масло",
-    "photo": "images/product_1780240206109_e3ee61d5df13"
+    "photo": "images/product_1780240206109_e3ee61d5df13",
+    "nutrition": [
+     228,
+     4,
+     4,
+     44
+    ]
    },
    {
     "name": "Гречка",
     "price": 170.0,
     "ingredients": "Гречневая крупа, сливочное масло",
-    "photo": "images/product_1780240237235_dbcaee760521"
+    "photo": "images/product_1780240237235_dbcaee760521",
+    "nutrition": [
+     197,
+     6,
+     5,
+     32
+    ]
    },
    {
     "name": "Макароны",
     "price": 170.0,
     "ingredients": "Макаронные изделия, сливочное масло",
-    "photo": "images/product_1780492357919_bb1fb7d51ef7"
+    "photo": "images/product_1780492357919_bb1fb7d51ef7",
+    "nutrition": [
+     237,
+     6,
+     5,
+     42
+    ]
    },
    {
     "name": "Лепёшка узбекская",
     "price": 60.0,
     "ingredients": "Пшеничная мука, вода, дрожжи, кунжут, чернушка — из тандыра",
-    "photo": "images/product_1780240397657_662e26897931"
+    "photo": "images/product_1780240397657_662e26897931",
+    "nutrition": [
+     510,
+     16,
+     6,
+     98
+    ]
    },
    {
     "name": "Фатыр",
     "price": 200.0,
     "ingredients": "Слоёная лепёшка на топлёном масле из тандыра",
-    "photo": "images/product_1780492845588_efab13909377"
+    "photo": "images/product_1780492845588_efab13909377",
+    "nutrition": [
+     638,
+     12,
+     30,
+     80
+    ]
    },
    {
     "name": "Соус чесночный",
     "price": 60.0,
     "ingredients": "Сметана, майонез, чеснок, укроп",
-    "photo": "images/product_1780493182684_a63698c3b017"
+    "photo": "images/product_1780493182684_a63698c3b017",
+    "nutrition": [
+     138,
+     1,
+     14,
+     2
+    ]
    },
    {
     "name": "Соус томатный",
     "price": 60.0,
     "ingredients": "Томаты, лук, чеснок, специи",
-    "photo": "images/product_1780493296737_814038eb5bdb"
+    "photo": "images/product_1780493296737_814038eb5bdb",
+    "nutrition": [
+     37,
+     1,
+     1,
+     6
+    ]
    },
    {
     "name": "Соус аджика",
     "price": 60.0,
     "ingredients": "Острый перец, чеснок, кинза, специи",
-    "photo": "images/product_1780493354418_3a4a4d6bac45"
+    "photo": "images/product_1780493354418_3a4a4d6bac45",
+    "nutrition": [
+     38,
+     1,
+     2,
+     4
+    ]
    },
    {
     "name": "Соус сальса",
     "price": 60.0,
     "ingredients": "Помидоры, красный лук, перец чили, кинза, лайм",
-    "photo": "images/product_1780493340076_f52cdd8bc0f5"
+    "photo": "images/product_1780493340076_f52cdd8bc0f5",
+    "nutrition": [
+     29,
+     1,
+     1,
+     4
+    ]
    },
    {
     "name": "Сметана",
     "price": 60.0,
     "ingredients": "Сметана 20%",
-    "photo": "images/product_1780493368934_145f9dc334b0"
+    "photo": "images/product_1780493368934_145f9dc334b0",
+    "nutrition": [
+     102,
+     1,
+     10,
+     2
+    ]
    },
    {
     "name": "Кетчуп",
     "price": 60.0,
     "ingredients": "Томатный кетчуп",
-    "photo": "images/product_1780493384080_d51613e3f6d2"
+    "photo": "images/product_1780493384080_d51613e3f6d2",
+    "nutrition": [
+     52,
+     1,
+     0,
+     12
+    ]
    }
   ]
  },
@@ -602,97 +1154,193 @@ window.MENU = [
     "name": "Чай «Самарканд»",
     "price": 200.0,
     "ingredients": "Чёрный чай, лимон, мёд, имбирь, корица, гвоздика",
-    "photo": "images/product_1780608795851_902a4ff3f798"
+    "photo": "images/product_1780608795851_902a4ff3f798",
+    "nutrition": [
+     96,
+     0,
+     0,
+     24
+    ]
    },
    {
     "name": "Чёрный чай «Эрл Грей»",
     "price": 200.0,
     "ingredients": "Чёрный чай с бергамотом",
-    "photo": "images/product_1780608857167_49eb4f5abf58"
+    "photo": "images/product_1780608857167_49eb4f5abf58",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай с чабрецом",
     "price": 200.0,
     "ingredients": "Чёрный чай, чабрец",
-    "photo": "images/product_1780608990754_5f403ccaa97c"
+    "photo": "images/product_1780608990754_5f403ccaa97c",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай с жасмином",
     "price": 200.0,
     "ingredients": "Зелёный чай с цветками жасмина",
-    "photo": "images/product_1780609109425_7fc26e9c2550"
+    "photo": "images/product_1780609109425_7fc26e9c2550",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай «Молочный улун»",
     "price": 200.0,
     "ingredients": "Улун с молочным ароматом",
-    "photo": "images/product_1780609226786_1564810ae109"
+    "photo": "images/product_1780609226786_1564810ae109",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай чёрный",
     "price": 80.0,
     "ingredients": "Чёрный листовой чай",
-    "photo": "images/product_1780609322092_c94204cd75f4"
+    "photo": "images/product_1780609322092_c94204cd75f4",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай зелёный",
     "price": 80.0,
     "ingredients": "Зелёный листовой чай",
-    "photo": "images/product_1780609372516_a5d0a7d31b44"
+    "photo": "images/product_1780609372516_a5d0a7d31b44",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай, стакан (200 мл)",
     "price": 50.0,
     "ingredients": "Чёрный или зелёный чай на выбор",
-    "photo": "images/product_1780609704522_c3b5837c0f9e"
+    "photo": "images/product_1780609704522_c3b5837c0f9e",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Чай малиновый с имбирём",
     "price": 350.0,
     "ingredients": "Малина, имбирь, мёд, лимон",
-    "photo": "images/product_1780609820023_ba01c1ac2228"
+    "photo": "images/product_1780609820023_ba01c1ac2228",
+    "nutrition": [
+     120,
+     0,
+     0,
+     30
+    ]
    },
    {
     "name": "Чай облепиховый с грушей",
     "price": 350.0,
     "ingredients": "Облепиха, груша, мёд, корица",
-    "photo": "images/product_1780609882480_9efe401c2312"
+    "photo": "images/product_1780609882480_9efe401c2312",
+    "nutrition": [
+     128,
+     0,
+     0,
+     32
+    ]
    },
    {
     "name": "Чай с клубникой, лаймом и мятой",
     "price": 350.0,
     "ingredients": "Клубника, лайм, мята, мёд",
-    "photo": "images/product_1780609939629_a425c39a83bb"
+    "photo": "images/product_1780609939629_a425c39a83bb",
+    "nutrition": [
+     104,
+     0,
+     0,
+     26
+    ]
    },
    {
     "name": "Чай с чёрной смородиной и базиликом",
     "price": 350.0,
     "ingredients": "Чёрная смородина, базилик, мёд",
-    "photo": "images/product_1780610005205_a2df7641f81b"
+    "photo": "images/product_1780610005205_a2df7641f81b",
+    "nutrition": [
+     104,
+     0,
+     0,
+     26
+    ]
    },
    {
     "name": "Чай с шиповником",
     "price": 350.0,
     "ingredients": "Шиповник, мёд, лимон",
-    "photo": "images/product_1780610052293_0792274c1599"
+    "photo": "images/product_1780610052293_0792274c1599",
+    "nutrition": [
+     80,
+     0,
+     0,
+     20
+    ]
    },
    {
     "name": "Чай с ромашкой",
     "price": 350.0,
     "ingredients": "Ромашка, мёд",
-    "photo": "images/product_1780610096481_5e0f506a071f"
+    "photo": "images/product_1780610096481_5e0f506a071f",
+    "nutrition": [
+     64,
+     0,
+     0,
+     16
+    ]
    },
    {
     "name": "Чай с брусникой",
     "price": 350.0,
     "ingredients": "Брусника, апельсин, мёд",
-    "photo": "images/product_1780610296823_29d76a0fb113"
+    "photo": "images/product_1780610296823_29d76a0fb113",
+    "nutrition": [
+     104,
+     0,
+     0,
+     26
+    ]
    },
    {
     "name": "Чай фруктовый",
     "price": 350.0,
     "ingredients": "Яблоко, апельсин, ягоды, мята, мёд",
-    "photo": "images/product_1780610402868_00fc5f95b509"
+    "photo": "images/product_1780610402868_00fc5f95b509",
+    "nutrition": [
+     112,
+     0,
+     0,
+     28
+    ]
    }
   ]
  },
@@ -704,139 +1352,277 @@ window.MENU = [
     "name": "Компот домашний 0,2 л",
     "price": 75.0,
     "ingredients": "Сухофрукты, сахар, вода",
-    "photo": "images/product_1780610557472_aa235338f77a"
+    "photo": "images/product_1780610557472_aa235338f77a",
+    "nutrition": [
+     88,
+     0,
+     0,
+     22
+    ]
    },
    {
     "name": "Компот домашний 1 л",
     "price": 300.0,
     "ingredients": "Сухофрукты, сахар, вода",
-    "photo": "images/product_1780610569393_43d760e6c097"
+    "photo": "images/product_1780610569393_43d760e6c097",
+    "nutrition": [
+     444,
+     1,
+     0,
+     110
+    ]
    },
    {
     "name": "Сок «Добрый» в ассортименте 1 л",
     "price": 220.0,
     "ingredients": "Яблоко, апельсин, вишня, мультифрукт",
-    "photo": "images/product_1780610642670_8a53254e7afa"
+    "photo": "images/product_1780610642670_8a53254e7afa",
+    "nutrition": [
+     460,
+     5,
+     0,
+     110
+    ]
    },
    {
     "name": "Минеральная вода «Боржоми» 0,5 л",
     "price": 220.0,
     "ingredients": "Природная минеральная вода",
-    "photo": "images/product_1780610748304_4e685c4c4183"
+    "photo": "images/product_1780610748304_4e685c4c4183",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "«Бон Аква» 0,5 л",
     "price": 100.0,
     "ingredients": "Питьевая вода, газированная или негазированная",
-    "photo": "images/product_1780610782635_77a78b588901"
+    "photo": "images/product_1780610782635_77a78b588901",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "«Бон Аква» 1 л",
     "price": 120.0,
     "ingredients": "Питьевая вода, газированная или негазированная",
-    "photo": "images/product_1780610794035_27bbadc3e91a"
+    "photo": "images/product_1780610794035_27bbadc3e91a",
+    "nutrition": [
+     0,
+     0,
+     0,
+     0
+    ]
    },
    {
     "name": "Мохито классический 0,4 л",
     "price": 250.0,
     "ingredients": "Лайм, мята, тростниковый сахар, содовая, лёд",
-    "photo": "images/product_1780610839722_3b4c572f7170"
+    "photo": "images/product_1780610839722_3b4c572f7170",
+    "nutrition": [
+     128,
+     0,
+     0,
+     32
+    ]
    },
    {
     "name": "Мохито классический 1 л",
     "price": 400.0,
     "ingredients": "Лайм, мята, тростниковый сахар, содовая, лёд",
-    "photo": "images/product_1780610850313_9463c44ad93c"
+    "photo": "images/product_1780610850313_9463c44ad93c",
+    "nutrition": [
+     320,
+     0,
+     0,
+     80
+    ]
    },
    {
     "name": "Мохито клубничный 0,4 л",
     "price": 250.0,
     "ingredients": "Клубника, лайм, мята, содовая, лёд",
-    "photo": "images/product_1780610895968_b28342fd0dd5"
+    "photo": "images/product_1780610895968_b28342fd0dd5",
+    "nutrition": [
+     152,
+     0,
+     0,
+     38
+    ]
    },
    {
     "name": "Мохито клубничный 1 л",
     "price": 400.0,
     "ingredients": "Клубника, лайм, мята, содовая, лёд",
-    "photo": "images/product_1780610905578_17f7b9177aae"
+    "photo": "images/product_1780610905578_17f7b9177aae",
+    "nutrition": [
+     384,
+     1,
+     0,
+     95
+    ]
    },
    {
     "name": "Манго–маракуйя 0,4 л",
     "price": 250.0,
     "ingredients": "Пюре манго, маракуйя, лайм, содовая, лёд",
-    "photo": "images/product_1780610971256_bc03ddcf4ccd"
+    "photo": "images/product_1780610971256_bc03ddcf4ccd",
+    "nutrition": [
+     172,
+     1,
+     0,
+     42
+    ]
    },
    {
     "name": "Манго–маракуйя 1 л",
     "price": 400.0,
     "ingredients": "Пюре манго, маракуйя, лайм, содовая, лёд",
-    "photo": "images/product_1780610979571_76d3d8edc42d"
+    "photo": "images/product_1780610979571_76d3d8edc42d",
+    "nutrition": [
+     428,
+     2,
+     0,
+     105
+    ]
    },
    {
     "name": "Мохито микс 0,4 л",
     "price": 250.0,
     "ingredients": "Ягодный микс, лайм, мята, содовая, лёд",
-    "photo": "images/product_1780611125871_7a67b3917609"
+    "photo": "images/product_1780611125871_7a67b3917609",
+    "nutrition": [
+     152,
+     0,
+     0,
+     38
+    ]
    },
    {
     "name": "Мохито микс 1 л",
     "price": 400.0,
     "ingredients": "Ягодный микс, лайм, мята, содовая, лёд",
-    "photo": "images/product_1780611138149_cbef850291cf"
+    "photo": "images/product_1780611138149_cbef850291cf",
+    "nutrition": [
+     384,
+     1,
+     0,
+     95
+    ]
    },
    {
     "name": "RC Cola 1 л",
     "price": 220.0,
     "ingredients": "Газированный напиток",
-    "photo": "images/product_1780611190246_e87a9a9447f1"
+    "photo": "images/product_1780611190246_e87a9a9447f1",
+    "nutrition": [
+     424,
+     0,
+     0,
+     106
+    ]
    },
    {
     "name": "RC Cola 1,5 л",
     "price": 270.0,
     "ingredients": "Газированный напиток",
-    "photo": "images/product_1780611200868_b35d6092fd27"
+    "photo": "images/product_1780611200868_b35d6092fd27",
+    "nutrition": [
+     636,
+     0,
+     0,
+     159
+    ]
    },
    {
     "name": "Лимонад «Натахтари» 0,5 л",
     "price": 180.0,
     "ingredients": "Тархун, груша, лимон — в ассортименте",
-    "photo": "images/product_1780611249563_9d8a2bc7a43c"
+    "photo": "images/product_1780611249563_9d8a2bc7a43c",
+    "nutrition": [
+     220,
+     0,
+     0,
+     55
+    ]
    },
    {
     "name": "Лимонад «Святой Грааль» 0,5 л",
     "price": 180.0,
     "ingredients": "Газированный напиток, в ассортименте",
-    "photo": "images/product_1780611310927_65bcc56ed969"
+    "photo": "images/product_1780611310927_65bcc56ed969",
+    "nutrition": [
+     200,
+     0,
+     0,
+     50
+    ]
    },
    {
     "name": "Adrenaline Rush 0,5 л",
     "price": 200.0,
     "ingredients": "Энергетический напиток",
-    "photo": "images/product_1780611352464_8303415a5ba2"
+    "photo": "images/product_1780611352464_8303415a5ba2",
+    "nutrition": [
+     228,
+     0,
+     0,
+     57
+    ]
    },
    {
     "name": "Coca-Cola / Pepsi 0,3 л",
     "price": 120.0,
     "ingredients": "Газированный напиток",
-    "photo": "images/product_1780611446247_0ea8863b3a53"
+    "photo": "images/product_1780611446247_0ea8863b3a53",
+    "nutrition": [
+     128,
+     0,
+     0,
+     32
+    ]
    },
    {
     "name": "Coca-Cola / Pepsi 0,5 л",
     "price": 140.0,
     "ingredients": "Газированный напиток",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     212,
+     0,
+     0,
+     53
+    ]
    },
    {
     "name": "Coca-Cola / Pepsi 1 л",
     "price": 220.0,
     "ingredients": "Газированный напиток",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     424,
+     0,
+     0,
+     106
+    ]
    },
    {
     "name": "Coca-Cola / Pepsi 2 л",
     "price": 290.0,
     "ingredients": "Газированный напиток",
-    "photo": ""
+    "photo": "",
+    "nutrition": [
+     848,
+     0,
+     0,
+     212
+    ]
    }
   ]
  }
