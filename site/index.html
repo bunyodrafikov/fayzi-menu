@@ -32,7 +32,7 @@
     --ease: cubic-bezier(.2, .7, .2, 1);
   }
   * { box-sizing: border-box; }
-  html { scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+  html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
     background: var(--bg);
@@ -42,57 +42,67 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Header */
+  /* Header: «Fayzi» + subtitle on the left, Telegram pill on the right; scrolls away (Telegram only at the top). */
   .hero {
-    text-align: center;
-    padding: 40px 16px 20px;
+    max-width: 960px; margin: 0 auto; padding: 28px 16px 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
   }
+  /* The big «Fayzi» itself travels into the chip bar while scrolling (transform set from JS), then hands over
+     to the small one in the bar at the exact same spot. Painted above the bar while it travels. */
   .hero h1 {
-    font: 400 40px/1 Prata, Georgia, serif;
-    margin: 0;
-    letter-spacing: .01em;
+    font: 400 40px/1 Prata, Georgia, serif; margin: 0; letter-spacing: .01em;
+    position: relative; z-index: 11;
+    transform-origin: 0 0; will-change: transform;
   }
+  .hero h1.docked { visibility: hidden; }
   .hero p {
     margin: 8px 0 0;
     color: var(--muted);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .28em;
-    text-transform: uppercase;
+    font-size: 14px; font-weight: 500;
+    opacity: calc(1 - var(--q) * 1.6);
   }
+  .tg-top {
+    flex: none;
+    display: inline-flex; align-items: center; gap: 7px;
+    height: 36px; padding: 0 14px 0 11px;
+    border-radius: 999px;
+    background: var(--surface);
+    box-shadow: inset 0 0 0 1px var(--line);
+    color: var(--text);
+    font-size: 13px; font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow .2s, transform .15s var(--ease);
+  }
+  .tg-top svg { color: #2aabee; }
+  @media (hover: hover) { .tg-top:hover { box-shadow: inset 0 0 0 1px #2aabee; } }
+  .tg-top:active { transform: scale(.96); }
+  .tg-top:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-  /* Category bar */
-  /* No bar behind the chips: they float over the menu on their own pills */
+  /* Sticky chip bar. --q (0→1, set from JS as the big «Fayzi» scrolls under the bar) slides the small
+     «Fayzi» in and fades in the backdrop, following the scroll frame by frame instead of a timed toggle. */
+  :root { --q: 0; }
   nav.cats { position: sticky; top: 0; z-index: 10; }
-  /* Soft fade from the top behind «Fayzi» and the chips once scrolled; content dissolves under it */
   nav.cats::before {
     content: "";
     position: absolute; inset: 0 0 -28px;
     z-index: -1;
     pointer-events: none;
-    background: linear-gradient(to bottom,
-      var(--bg) 0%,
-      color-mix(in srgb, var(--bg) 85%, transparent) 55%,
-      transparent 100%);
-    opacity: 0;
-    transition: opacity .3s var(--ease);
+    background: linear-gradient(to bottom, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, transparent) 55%, transparent 100%);
+    opacity: var(--q);
   }
-  nav.cats.compact::before { opacity: 1; }
   nav.cats .bar { display: flex; align-items: center; max-width: 960px; margin: 0 auto; }
-  /* «Fayzi» slides in left of the chips once the header has scrolled away */
+  nav.cats.docked .brand { opacity: 1; }
   nav.cats .brand {
     flex: none;
-    max-width: 0; overflow: hidden;
-    padding-left: 0;
-    opacity: 0;
+    overflow: hidden; white-space: nowrap;
+    max-width: calc(var(--q) * 100px);
+    padding-left: calc(var(--q) * 16px);
+    opacity: 0; /* shown only once the big title has landed here */
     font: 400 22px/1 Prata, Georgia, serif;
+    letter-spacing: .01em; /* same as the big title so the swap is invisible */
     color: var(--text);
     text-decoration: none;
-    text-shadow: 0 1px 8px rgb(0 0 0 / .6);
-    pointer-events: none;
-    transition: max-width .35s var(--ease), opacity .25s var(--ease), padding .35s var(--ease);
   }
-  nav.cats.compact .brand { max-width: 100px; padding-left: 16px; opacity: 1; pointer-events: auto; }
   nav.cats .row {
     flex: 1; min-width: 0;
     display: flex; gap: 8px;
@@ -149,7 +159,7 @@
   @media (min-width: 520px) { .items { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; } }
   @media (min-width: 760px) { .items { grid-template-columns: repeat(3, 1fr); gap: 20px 16px; } }
   @media (min-width: 960px) { .items { grid-template-columns: repeat(4, 1fr); } }
-  @media (min-width: 960px) { main { max-width: 1160px; } nav.cats .bar { max-width: 1160px; } }
+  @media (min-width: 960px) { main { max-width: 1160px; } nav.cats .bar, .hero { max-width: 1160px; } }
 
   .item {
     all: unset;
@@ -251,69 +261,6 @@
   .nutrition span { font-size: 11px; color: var(--muted); }
   .nutrition-note { margin: -10px 0 16px; font-size: 11px; color: var(--muted); text-align: right; }
 
-  /* Feedback (Telegram): small corner button in the header + a full-width card at the end */
-  .hero { position: relative; }
-  .tg-card .tg-icon { color: #2aabee; } /* Telegram blue */
-  footer { max-width: 960px; margin: 0 auto; padding: 8px 16px calc(40px + env(safe-area-inset-bottom)); }
-  .tg-card {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px;
-    border-radius: 20px;
-    background: var(--surface);
-    box-shadow: var(--shadow);
-    color: var(--text);
-    text-decoration: none;
-    transition: transform .2s var(--ease);
-  }
-  .tg-card .tg-icon {
-    flex: none; display: grid; place-items: center;
-    width: 44px; height: 44px; border-radius: 50%;
-    background: rgb(42 171 238 / .15);
-  }
-  .tg-card .tg-text { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .tg-card b { font-size: 16px; }
-  .tg-card span { font-size: 13px; color: var(--muted); }
-  .tg-card .chev { flex: none; color: var(--muted); }
-  .tg-card:active { transform: scale(.98); }
-  @media (hover: hover) { .tg-card:hover { box-shadow: inset 0 0 0 1px var(--accent); } }
-  .tg-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .tg-cta { display: none; }
-
-  /* Floating Telegram button, bottom-right; hides while the Telegram card at the end is visible */
-  .tg-fab {
-    position: fixed; z-index: 20;
-    right: max(16px, env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom));
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    height: 48px; padding: 0 18px 0 14px;
-    border-radius: 999px;
-    background: #2aabee; color: #fff;
-    box-shadow: 0 6px 20px rgb(0 0 0 / .45);
-    text-decoration: none;
-    font-size: 14px; font-weight: 700;
-    transition: transform .25s var(--ease), opacity .25s var(--ease), box-shadow .2s;
-  }
-  .tg-fab.hidden { opacity: 0; transform: translateY(12px) scale(.9); pointer-events: none; }
-  .tg-fab:active { transform: scale(.94); }
-  .tg-fab:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-  @media (min-width: 760px) {
-    .tg-fab { right: 24px; bottom: 24px; }
-    .tg-fab:hover { box-shadow: 0 8px 26px rgb(42 171 238 / .45); }
-    footer { max-width: 640px; padding-top: 24px; }
-    .tg-card { gap: 16px; padding: 18px 20px; }
-    .tg-card .tg-icon { width: 52px; height: 52px; }
-    .tg-card .tg-icon svg { width: 26px; height: 26px; }
-    .tg-card b { font-size: 18px; }
-    .tg-card .tg-text span { font-size: 14px; }
-    .tg-card .chev { display: none; }
-    .tg-cta {
-      display: inline-flex; align-items: center;
-      flex: none;
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: #2aabee; color: #fff;
-      font-size: 14px; font-weight: 700;
-    }
-  }
   .close {
     all: unset;
     position: absolute; top: 12px; right: 12px;
@@ -343,20 +290,14 @@
 </head>
 <body>
 <header class="hero">
-  <h1>Fayzi</h1>
-  <p>Чайхана · Меню</p>
+  <div>
+    <h1>Fayzi</h1>
+    <p>Чайхана · Меню</p>
+  </div>
+  <a class="tg-top" href="https://t.me/otziv_chay" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.1zM8.2 13.9l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4z"/></svg>Наш Telegram</a>
 </header>
-<nav class="cats" aria-label="Категории"><div class="bar"><a class="brand" href="#top" aria-label="Наверх" tabindex="-1">Fayzi</a><div class="row" id="cats"></div></div></nav>
+<nav class="cats" aria-label="Категории"><div class="bar"><a class="brand" href="#" aria-label="Fayzi — наверх" tabindex="-1">Fayzi</a><div class="row" id="cats"></div></div></nav>
 <main id="menu"></main>
-<footer>
-  <a class="tg-card" href="https://t.me/otziv_chay" target="_blank" rel="noopener">
-    <span class="tg-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.1zM8.2 13.9l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4z"/></svg></span>
-    <span class="tg-text"><b>Наш Telegram</b><span>Отзывы и предложения — @otziv_chay</span></span>
-    <span class="tg-cta">Открыть</span>
-    <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
-  </a>
-</footer>
-<a class="tg-fab" href="https://t.me/otziv_chay" target="_blank" rel="noopener" aria-label="Наш Telegram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.1zM8.2 13.9l9.7-6.1c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4z"/></svg><span>Наш Telegram</span></a>
 <dialog id="sheet" aria-label="Блюдо"></dialog>
 
 <script src="menu.js"></script>
@@ -447,11 +388,6 @@ function renderItem(it) {
 
 function render(menu) {
   const nav = document.getElementById('cats');
-  const navBar = nav.closest('nav');
-  // Show «Fayzi» in the chip bar once the big header is out of view; tap it to go back to the top.
-  new IntersectionObserver(([e]) => navBar.classList.toggle('compact', !e.isIntersecting))
-    .observe(document.querySelector('.hero h1'));
-  navBar.querySelector('.brand').addEventListener('click', e => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
   const main = document.getElementById('menu');
 
   menu.forEach((cat, ci) => {
@@ -510,11 +446,47 @@ function render(menu) {
 // Always open at the top (header first): drop any old #section from the URL and don't restore scroll on reload.
 history.scrollRestoration = 'manual';
 if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-const fab = document.querySelector('.tg-fab');
-new IntersectionObserver(([e]) => fab.classList.toggle('hidden', e.isIntersecting)).observe(document.querySelector('footer'));
+// «Fayzi» hand-off: over the scroll distance before the chip bar sticks, the big title is moved and scaled
+// (transform only) from its place in the header to the small «Fayzi» slot in the bar; at the end the two swap.
+const hero = document.querySelector('.hero'), bigTitle = hero.querySelector('h1');
+const navEl = document.querySelector('nav.cats'), barEl = navEl.querySelector('.bar'), smallTitle = navEl.querySelector('.brand');
+let m;
+function measureBrand() {
+  bigTitle.style.transform = '';
+  const t = bigTitle.getBoundingClientRect(), bar = barEl.getBoundingClientRect();
+  const small = parseFloat(getComputedStyle(smallTitle).fontSize), big = parseFloat(getComputedStyle(bigTitle).fontSize);
+  m = {
+    x0: t.left, y0: t.top + scrollY,                 // big title at scroll 0
+    x1: bar.left + 16, y1: (navEl.offsetHeight - small) / 2, // small title slot once the bar is stuck at top
+    scale: small / big,
+    end: hero.offsetHeight,                          // scroll at which the bar sticks
+  };
+}
+const syncBrand = () => {
+  // Pull-to-refresh / iOS rubber-band gives negative scrollY: treat it as 0 so the title moves with the page
+  // instead of being pushed the other way.
+  const y = Math.max(scrollY, 0);
+  const p = Math.min(y / m.end, 1);
+  const dx = (m.x1 - m.x0) * p;
+  const dy = (m.y0 + (m.y1 - m.y0) * p) - (m.y0 - y);
+  bigTitle.style.transform = p === 0 ? '' : `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${(1 + (m.scale - 1) * p).toFixed(4)})`;
+  document.documentElement.style.setProperty('--q', p.toFixed(3));
+  const docked = p >= 1;
+  bigTitle.classList.toggle('docked', docked);
+  navEl.classList.toggle('docked', docked);
+};
+addEventListener('resize', () => { measureBrand(); syncBrand(); });
+document.fonts?.ready.then(() => { measureBrand(); syncBrand(); });
+addEventListener('scroll', syncBrand, { passive: true }); // scroll fires once per frame; updating here avoids a one-frame lag
+document.querySelector('nav.cats .brand').addEventListener('click', e => {
+  e.preventDefault();
+  scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
 if (window.MENU) render(window.MENU);
 else document.getElementById('menu').append(el('p', { class: 'error' }, 'Не удалось загрузить меню. Обновите страницу.'));
 scrollTo(0, 0);
+measureBrand();
+syncBrand();
 </script>
 </body>
 </html>
