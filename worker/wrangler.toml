@@ -1,0 +1,13 @@
+# Deploy: see worker/README.md
+name = "fayzi-menu-admin"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+REPO = "bunyodrafikov/fayzi-menu"
+BRANCH = "main"
+ALLOWED_ORIGIN = "https://fayzi-chayhana.site"
+
+# Secrets (set with `npx wrangler secret put <NAME>`, never commit them):
+#   ADMIN_PASSWORD  the password the manager types on the admin page
+#   GITHUB_TOKEN    fine-grained token: this repo only, Contents read/write
