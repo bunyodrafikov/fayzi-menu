@@ -128,7 +128,7 @@
 <script>
 // Admin page: loads menu.json through the Worker (worker/), edits it here, saves it back as one commit.
 // The Worker checks the password; this page holds nothing secret.
-const API = location.hostname === 'localhost' ? 'http://localhost:8787' : 'https://fayzi-menu-admin.SUBDOMAIN.workers.dev';
+const API = location.hostname === 'localhost' ? 'http://localhost:8787' : 'https://fayzi-menu-admin.fayzi-menu.workers.dev';
 
 const $ = id => document.getElementById(id);
 let password = sessionStorage.getItem('pw') || '';
